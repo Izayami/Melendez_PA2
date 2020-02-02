@@ -1,60 +1,16 @@
-import java.util.Scanner;
 public class Decrypter{ 
-public static String decrypt(String number) {
-    int arr[] = new int[4];
-    for(int i=0;i<4;i++) {
-        char ch = number.charAt(i);
-        arr[i] = Character.getNumericValue(ch);
-    }
-    int temp = arr[0];
-    arr[0]=arr[2];
-    arr[2]=temp;
-    temp = arr[1];
-    arr[1]=arr[3];
-    arr[3]=temp;
-    for(int i=0;i<4;i++) {
-        int digit = arr[i];
-        switch(digit) {
-            case 0:
-                arr[i] = 3;
-                break;
-            case 1:
-                arr[i] = 4;
-                break;
-            case 2:
-                arr[i] = 5;
-                break;
-            case 3:
-                arr[i] = 6;
-                break;
-            case 4:
-                arr[i] = 7;
-                break;
-            case 5:
-                arr[i] = 8;
-                break;
-            case 6:
-                arr[i] = 9;
-                break;
-            case 7:
-                arr[i] = 0;
-                break;
-            case 8:
-                arr[i] = 1;
-                break;
-            case 9:
-                arr[i] = 2;
-                break;
-        }
-    }
-    int newNumber = 0 ;
-    for(int i=0;i<4;i++)
-        newNumber = newNumber * 10 + arr[i];
-    String output = Integer.toString(newNumber);
-    if(arr[0]==0)
-        output = "0"+output;
-    return output;
-   
-}
+	public static int decrypt( int n)
+	{
+	   int a = n / 1000;
+	   int b = (n % 1000) / 100;
+	   int c = (n % 100) / 10;
+	   int d = n % 10;
+	   a = (a + 3) % 10;
+	   b = (b + 3) % 10;
+	   c = (c + 3) % 10;
+	   d = (d + 3) % 10;
+	   return (c * 1000 + d * 100 + a * 10 + b);
+	}
+
 }
 

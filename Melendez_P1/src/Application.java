@@ -1,24 +1,20 @@
 import java.util.Scanner;
 public class Application 
 {
-	   public static void main(String[] args) {
-	       Scanner sc = new Scanner(System.in);
-	       System.out.print("Enter a 4 digit integer:");
-	       String number = sc.nextLine();
-	       String encryptedNumber = encrypter(number);
-	       System.out.println("The decrypted number is:"+encryptedNumber);
-	       System.out.println("The original number is:"+ decrypt(encryptedNumber));
-	      
-	   }
+	public static void main(String []args){
+		Scanner sc=new Scanner(System.in);
+		    int n;
+		   System.out.println("Enter four-digit number: ");
+		   n=sc.nextInt();
+		   System.out.println("Encrypted number is: "+encrypt(n));
+		   System.out.println("Number after encrypt-decrypt cycle is: "+decrypt(encrypt(n)));
+		}
 
-	private static String encrypter(String number) {
-		// TODO Auto-generated method stub
+	private static String decrypt(String encrypt) {
 		return null;
 	}
 
-	private static String decrypt(String encryptedNumber) {
-		// TODO Auto-generated method stub
+	private static String encrypt(int n) {
 		return null;
 	}
-
-	}
+		}

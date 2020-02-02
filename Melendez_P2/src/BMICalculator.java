@@ -1,8 +1,8 @@
-import java.util.String;
+import java.util.Scanner;
 public class BMICalculator 
 {
-	 public static void main(String[] args) {
-	        Scanner console = new Scanner(System.in);
+	 public static void main(String []args) {
+			Scanner console = new Scanner(System.in);
 	        System.out.print("height (in feet)? ");
 	        double feet = console.nextInt();
 	        System.out.print("height (in inches)? ");

@@ -1,30 +1,15 @@
-import java.util.Scanner;
 public class Encrypter 
 {
-   public static String encrypt(String number) {
-       int arr[] = new int[4];
-       for(int i=0;i<4;i++) {
-           char ch = number.charAt(i);
-           arr[i] = Character.getNumericValue(ch);
-       }
-       for(int i=0;i<4;i++) {
-           int temp = arr[i] ;
-           temp += 7 ;
-           temp = temp % 10 ;
-           arr[i] = temp ;
-       }
-       int temp = arr[0];
-       arr[0] = arr[2];
-       arr[2]= temp ;
-       temp = arr[1];
-       arr[1] =arr[3];
-       arr[3] = temp ;
-       int newNumber = 0 ;
-       for(int i=0;i<4;i++)
-           newNumber = newNumber * 10 + arr[i];
-       String output = Integer.toString(newNumber);
-       if(arr[0]==0)
-           output = "0"+output;
-       return output;
-   }
+	public static int encrypt( int n)
+	{
+	   int a = n / 1000;
+	   int b = (n % 1000) / 100;
+	   int c = (n % 100) / 10;
+	   int d = n % 10;
+	   a = (a + 7) % 10;
+	   b = (b + 7) % 10;
+	   c = (c + 7) % 10;
+	   d = (d + 7) % 10;
+	   return (c * 1000 + d * 100 + a * 10 + b); 
+	}
 }
